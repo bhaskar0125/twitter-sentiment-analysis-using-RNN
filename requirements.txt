@@ -1,6 +1,5 @@
-tensorflow
+tensorflow[and-cuda]==2.21.0
 scikit-learn
 pandas
 keras
 streamlit
-pickle
