@@ -187,7 +187,7 @@ Through this project, the following concepts were explored:
 
 **Your Name**
 
-GitHub: [Your GitHub Profile](https://github.com/YOUR_USERNAME)
+GitHub: [Your GitHub Profile](https://github.com/bhaskar0125)
 
 ---
 
