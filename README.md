@@ -159,6 +159,68 @@ The trained model and tokenizer are saved separately for reuse during inference.
 | `tokenizer.pkl` | Fitted text tokenizer used for sequence conversion |
 
 The tokenizer must be reused during prediction to maintain consistency with the training vocabulary.
+## Model Architecture and Implementation
+
+This project implements a **Twitter Sentiment Analysis model using a Recurrent Neural Network (RNN)** with a SimpleRNN architecture built using TensorFlow and Keras.
+
+The model is designed to perform **three-class sentiment classification**, categorizing tweets into:
+
+- **Negative**
+- **Neutral**
+- **Positive**
+
+### Architecture Overview
+
+The model uses a many-to-one RNN architecture, where a sequence of input tokens is processed recurrently, and the final representation is used to predict the overall sentiment of the tweet.
+
+The major components include:
+
+1. **Embedding Layer:** Converts integer-encoded words into dense, trainable vector representations, allowing the model to learn semantic patterns from textual data.
+2. **SimpleRNN Layer:** Processes the embedded sequence sequentially and maintains a hidden state to capture contextual information across the tweet.
+3. **Dense Output Layer:** Produces class scores for the three sentiment categories.
+4. **Softmax Activation:** Converts the output scores into probability distributions across Negative, Neutral, and Positive classes.
+
+### Model Performance
+
+The model was evaluated on a test dataset containing **11,497 tweets** and achieved an overall accuracy of **90%**.
+
+| Metric | Score |
+|---|---:|
+| Test Accuracy | 90% |
+| Macro F1-Score | 0.90 |
+| Weighted F1-Score | 0.90 |
+
+The classification results demonstrate consistent performance across all three sentiment categories, with F1-scores ranging from 0.89 to 0.91.
+
+### Technologies Used
+
+- Python
+- TensorFlow
+- Keras
+- NumPy
+- Pandas
+- Scikit-learn
+- Matplotlib
+
+### Key Learning Outcomes
+
+- Understanding recurrent neural network architectures.
+- Implementing many-to-one sequence classification.
+- Text preprocessing and tokenization.
+- Word embeddings and sequential feature learning.
+- Multiclass sentiment classification.
+- Model evaluation using precision, recall, F1-score, and accuracy.
+- GPU-accelerated model training using TensorFlow.## Classification Report
+
+| Class        | Precision | Recall | F1-Score | Support |
+|--------------|-----------|--------|----------|---------|
+| Negative     | 0.92      | 0.91   | 0.91     | 4,248   |
+| Neutral      | 0.89      | 0.89   | 0.89     | 3,422   |
+| Positive     | 0.90      | 0.91   | 0.90     | 3,827   |
+| **Accuracy** |           |        | **0.90** | **11,497** |
+| **Macro Avg** | **0.90** | **0.90** | **0.90** | **11,497** |
+| **Weighted Avg** | **0.90** | **0.90** | **0.90** | **11,497** |
+
 
 ## Future Improvements
 
